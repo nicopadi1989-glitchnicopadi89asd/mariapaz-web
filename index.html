@@ -1,0 +1,323 @@
+<title>María Paz Indumentaria</title>
+<style>
+:root{
+  --bg:#fffaf7; --card:#ffffff; --ink:#3a2e35; --ink-soft:#7a6b72;
+  --pink:#f7c6d9; --pink-deep:#e895b3; --lilac:#d9c7f0; --mint:#c9ecdb;
+  --peach:#ffe0c2; --line:#f0e2e8; --accent:#e895b3; --accent-ink:#5c2a3d;
+  --shadow:0 8px 24px rgba(180,120,150,.12);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme: dark){
+    --bg:#231a20; --card:#2c2128; --ink:#f5e9ee; --ink-soft:#c9b8c2;
+    --pink:#5c3346; --pink-deep:#e895b3; --lilac:#3d3350; --mint:#243b32;
+    --peach:#4a3524; --line:#3a2c34; --accent:#f0a8c4; --accent-ink:#ffe3ee;
+    --shadow:0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#231a20; --card:#2c2128; --ink:#f5e9ee; --ink-soft:#c9b8c2;
+  --pink:#5c3346; --pink-deep:#e895b3; --lilac:#3d3350; --mint:#243b32;
+  --peach:#4a3524; --line:#3a2c34; --accent:#f0a8c4; --accent-ink:#ffe3ee;
+  --shadow:0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Poppins',system-ui,sans-serif;padding:0;margin:0;line-height:1.5;overflow-x:hidden}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0 0 .4em;font-weight:600}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--bg) 85%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transition:box-shadow .3s ease}
+nav.scrolled{box-shadow:0 4px 18px rgba(180,120,150,.14)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-block:14px;gap:12px;flex-wrap:wrap}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;letter-spacing:.5px}
+.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:.92rem}
+.navlinks a{text-decoration:none;color:var(--ink-soft);transition:color .2s,transform .2s;position:relative;display:inline-block}
+.navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .25s ease}
+.navlinks a:hover{color:var(--accent-ink);transform:translateY(-1px)}
+.navlinks a:hover::after{width:100%}
+.cta-shop{background:linear-gradient(135deg,var(--pink-deep),var(--lilac));background-size:160% 160%;color:#3a2e35;padding:9px 18px;border-radius:30px;font-size:.88rem;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease,background-position .4s ease}
+.cta-shop:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 10px 22px rgba(180,120,150,.28);background-position:100% 100%}
+.cta-shop:active{transform:translateY(0) scale(.98)}
+
+/* HERO */
+.hero{padding:72px 0 60px;background:radial-gradient(circle at 80% 0%, var(--peach) 0%, transparent 45%),radial-gradient(circle at 10% 30%, var(--lilac) 0%, transparent 40%),var(--bg);background-size:200% 200%;animation:heroDrift 18s ease-in-out infinite alternate;overflow:hidden}
+@keyframes heroDrift{0%{background-position:0% 0%}100%{background-position:20% 15%}}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:2.6rem;color:var(--accent-ink);animation:fadeUp .8s ease both}
+.hero p.lead{color:var(--ink-soft);font-size:1.05rem;max-width:46ch;animation:fadeUp .8s ease .1s both}
+.hero .actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;animation:fadeUp .8s ease .2s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.btn{display:inline-block;padding:12px 26px;border-radius:30px;font-weight:600;text-decoration:none;font-size:.95rem;transition:transform .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 10px 22px rgba(180,120,150,.25)}
+.btn:active{transform:translateY(-1px) scale(.98)}
+.btn-primary{background:var(--accent);color:#3a1626;box-shadow:var(--shadow)}
+.btn-ghost{border:1.5px solid var(--pink-deep);color:var(--accent-ink);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn-ghost:hover{background:var(--pink)}
+.hero-art{aspect-ratio:1/1;border-radius:28px;background:linear-gradient(145deg,var(--pink),var(--peach) 60%,var(--mint));box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;color:#5c2a3d;text-align:center;padding:20px;animation:fadeUp .9s ease .1s both}
+.hero-art img{animation:floaty 5s ease-in-out infinite}
+
+section{padding:64px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;color:var(--accent-ink);font-weight:700;margin-bottom:8px}
+.section-head{max-width:60ch;margin-bottom:36px}
+.section-head p{color:var(--ink-soft)}
+
+/* QUIENES SOMOS */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 30px rgba(180,120,150,.2)}
+.card .ic{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px;transition:transform .3s ease}
+.card:hover .ic{transform:scale(1.15) rotate(-6deg)}
+.ic-pink{background:var(--pink)} .ic-mint{background:var(--mint)} .ic-peach{background:var(--peach)}
+.card h3{font-size:1.1rem}
+.card p{color:var(--ink-soft);font-size:.93rem;margin:0}
+
+/* CONTACTO */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.contact-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;transition:transform .2s ease,box-shadow .2s ease}
+.contact-list li:hover{transform:translateX(4px);box-shadow:var(--shadow)}
+.contact-list .ic{flex:none;width:38px;height:38px;border-radius:10px;background:var(--pink);display:flex;align-items:center;justify-content:center;transition:transform .25s ease}
+.contact-list li:hover .ic{transform:scale(1.12)}
+.contact-list a{text-decoration:none;color:var(--accent-ink);font-weight:600}
+form.contactform{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+form.contactform input,form.contactform textarea{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:11px 14px;font-family:inherit;font-size:.92rem;transition:border-color .2s ease,box-shadow .2s ease}
+form.contactform input:focus,form.contactform textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent)}
+form.contactform textarea{min-height:100px;resize:vertical}
+form.contactform button{align-self:flex-start}
+.form-note{font-size:.8rem;color:var(--ink-soft)}
+
+/* UBICACION */
+.map-embed{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);height:320px;transition:transform .25s ease,box-shadow .25s ease}
+.map-embed:hover{transform:translateY(-4px);box-shadow:0 16px 30px rgba(180,120,150,.22)}
+.map-embed iframe{width:100%;height:100%;border:0}
+.map-embed span:first-child{transition:transform .3s ease}
+.map-embed:hover span:first-child{transform:scale(1.15) translateY(-3px)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--ink-soft);font-size:.85rem}
+footer a{color:var(--accent-ink);text-decoration:none;font-weight:600}
+
+/* CHAT BOT */
+#chat-toggle{position:fixed;bottom:22px;right:22px;z-index:100;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--pink-deep),var(--lilac));border:none;box-shadow:var(--shadow);cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;animation:pulseChat 2.6s ease-in-out infinite;transition:transform .2s ease}
+#chat-toggle:hover{transform:scale(1.08);animation-play-state:paused}
+@keyframes pulseChat{0%,100%{box-shadow:0 8px 24px rgba(180,120,150,.25),0 0 0 0 rgba(232,149,179,.5)}50%{box-shadow:0 8px 24px rgba(180,120,150,.25),0 0 0 10px rgba(232,149,179,0)}}
+#chat-panel{position:fixed;bottom:94px;right:22px;z-index:100;width:320px;max-width:calc(100vw - 32px);background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden;max-height:70vh;transform-origin:bottom right;animation:popIn .25s ease both}
+#chat-panel[hidden]{display:none}
+@keyframes popIn{from{opacity:0;transform:scale(.9) translateY(10px)}to{opacity:1;transform:none}}
+.msg{animation:fadeUp .3s ease both}
+.chat-suggestions button{transition:transform .15s ease,border-color .15s ease}
+.chat-suggestions button:hover{transform:translateY(-2px);border-color:var(--accent)}
+.chat-head{background:linear-gradient(135deg,var(--pink-deep),var(--lilac));padding:14px 16px;font-weight:600;color:#3a1626;display:flex;justify-content:space-between;align-items:center}
+.chat-head button{background:none;border:none;font-size:1.1rem;cursor:pointer;color:#3a1626}
+#chat-body{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;font-size:.88rem}
+.msg{max-width:85%;padding:9px 13px;border-radius:14px;line-height:1.4}
+.msg.bot{background:var(--pink);color:#3a1626;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--lilac);color:#2a2333;align-self:flex-end;border-bottom-right-radius:4px}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 14px}
+.chat-suggestions button{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-size:.78rem;cursor:pointer;color:var(--ink)}
+.chat-suggestions button:hover{border-color:var(--accent)}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{order:-1;max-width:320px;margin:0 auto}
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .navlinks{order:3;width:100%;justify-content:center}
+}
+</style>
+
+<nav>
+  <div class="wrap">
+    <a href="#inicio" style="display:flex;align-items:center"><img src="logo.png" alt="María Paz Showroom" style="height:38px;width:auto;display:block"></a>
+    <div class="navlinks">
+      <a href="#inicio">Inicio</a>
+      <a href="#quienes-somos">Quiénes somos</a>
+      <a href="#contacto">Contáctame</a>
+      <a href="#ubicacion">Ubicación</a>
+    </div>
+    <a class="cta-shop" id="shopLinkTop" href="#" target="_blank" rel="noopener">Comprar online 🛍️</a>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Moda con actitud</div>
+      <h1>Vestí tu esencia, cada temporada</h1>
+      <p class="lead">María Paz Indumentaria es diseño, color y calidad pensados para vos. Colecciones frescas con inspiración primaveral, para acompañarte en cada look del día a día.</p>
+      <div class="actions">
+        <a class="btn btn-primary" id="shopLinkHero" href="#" target="_blank" rel="noopener">Ver tienda online</a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/mariapaz.mdp" target="_blank" rel="noopener">Seguinos en Instagram</a>
+      </div>
+    </div>
+    <div class="hero-art"><img src="logo.png" alt="María Paz Showroom" style="max-width:78%;height:auto;filter:drop-shadow(0 6px 14px rgba(180,120,150,.18))"></div>
+  </div>
+</header>
+
+<section id="quienes-somos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Quiénes somos</div>
+      <h2>Una marca hecha con pasión por la moda</h2>
+      <p>Nacimos con la idea de acercar prendas cómodas, femeninas y de tendencia, cuidando cada detalle desde la selección de telas hasta la atención a cada clienta.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <div class="ic ic-pink">🌸</div>
+        <h3>Diseño propio</h3>
+        <p>Colecciones pensadas por temporada, con paletas suaves y siluetas actuales.</p>
+      </div>
+      <div class="card">
+        <div class="ic ic-mint">✨</div>
+        <h3>Calidad y detalle</h3>
+        <p>Seleccionamos telas y terminaciones para que cada prenda dure y se sienta bien.</p>
+      </div>
+      <div class="card">
+        <div class="ic ic-peach">💬</div>
+        <h3>Atención cercana</h3>
+        <p>Te acompañamos en talles, cambios y consultas, antes y después de tu compra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Contáctame</div>
+      <h2>Hablemos</h2>
+      <p>Escribinos por el medio que prefieras, o dejanos tu consulta acá abajo.</p>
+    </div>
+    <div class="contact-grid">
+      <ul class="contact-list">
+        <li><span class="ic">📷</span><div>Instagram<br><a href="https://www.instagram.com/mariapaz.mdp" target="_blank" rel="noopener">@mariapaz.mdp</a></div></li>
+        <li><span class="ic">📱</span><div>WhatsApp<br><a href="#" id="waLink">Completar número</a></div></li>
+        <li><span class="ic">✉️</span><div>Email<br><a href="#" id="emailLink">Completar email</a></div></li>
+      </ul>
+      <form class="contactform" onsubmit="event.preventDefault(); alert('Gracias por escribirnos, te responderemos a la brevedad 💌');">
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu email" required>
+        <textarea placeholder="Tu mensaje"></textarea>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p class="form-note">Este formulario es una demo visual — para recibir mensajes reales hay que conectarlo a un servicio de email o WhatsApp.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ubicación</div>
+      <h2>Dónde encontrarnos</h2>
+      <p>Av. Luro 3162, Mar del Plata, Argentina.</p>
+    </div>
+    <a class="map-embed" href="https://www.google.com/maps/search/?api=1&query=Av.+Luro+3162+Mar+del+Plata" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:var(--ink);background:linear-gradient(150deg,var(--pink) 0%,var(--peach) 55%,var(--mint) 100%);text-align:center;padding:20px">
+      <span style="font-size:2.6rem">📍</span>
+      <strong style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--accent-ink)">Av. Luro 3162, Mar del Plata</strong>
+      <span style="font-size:.85rem;color:var(--ink-soft)">Tocá para abrir en Google Maps</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year"></span> María Paz Indumentaria · <a href="https://www.instagram.com/mariapaz.mdp" target="_blank" rel="noopener">Instagram</a></p>
+  </div>
+</footer>
+
+<!-- BOT DE ATENCIÓN AL CLIENTE (FAQ, sin backend) -->
+<button id="chat-toggle" aria-label="Abrir chat de ayuda">💬</button>
+<div id="chat-panel" hidden>
+  <div class="chat-head">
+    <span>Asistente María Paz</span>
+    <button id="chat-close" aria-label="Cerrar">✕</button>
+  </div>
+  <div id="chat-body"></div>
+  <div class="chat-suggestions" id="chat-suggestions"></div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ====== SCROLL REVEAL + NAV SHADOW ====== */
+document.querySelectorAll('.section-head, .about-grid .card, .contact-grid > *, .map-embed').forEach(el=> el.classList.add('reveal'));
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{ el.style.transitionDelay = (i%3)*0.08 + 's'; io.observe(el); });
+
+const navEl = document.querySelector('nav');
+window.addEventListener('scroll', ()=>{
+  navEl.classList.toggle('scrolled', window.scrollY > 8);
+}, {passive:true});
+
+/* ====== CONFIG EDITABLE ====== */
+const SHOP_URL = "#"; // reemplazar por el link real de la tienda Rubrik cuando esté listo
+const WHATSAPP_NUMBER = "5492236001990";
+const CONTACT_EMAIL = ""; // ej: "hola@mariapazindumentaria.com"
+
+[...document.querySelectorAll('#shopLinkTop,#shopLinkHero')].forEach(el=>{
+  el.href = SHOP_URL === "#" ? "#" : SHOP_URL;
+  if(SHOP_URL === "#"){ el.addEventListener('click', e=>{e.preventDefault(); alert('Muy pronto vas a poder comprar online acá 🛒');}); }
+});
+const waLink = document.getElementById('waLink');
+if(WHATSAPP_NUMBER){ waLink.href = `https://wa.me/${WHATSAPP_NUMBER}`; waLink.textContent = `+${WHATSAPP_NUMBER}`; }
+const emailLink = document.getElementById('emailLink');
+if(CONTACT_EMAIL){ emailLink.href = `mailto:${CONTACT_EMAIL}`; emailLink.textContent = CONTACT_EMAIL; }
+
+/* ====== FAQ BOT ====== */
+const FAQS = [
+  { q: "¿Qué productos venden?", a: "Vendemos indumentaria femenina de temporada: remeras, vestidos, conjuntos y más, con estilo primaveral y colores pasteles." },
+  { q: "¿Hacen envíos?", a: "Sí, hacemos envíos. Cuando esté activa la tienda online vas a poder elegir la forma de envío al finalizar tu compra." },
+  { q: "¿Cómo compro online?", a: "Muy pronto vas a poder comprar directo desde el botón 'Comprar online' que te lleva a nuestra tienda." },
+  { q: "¿Cuáles son los talles disponibles?", a: "Manejamos un rango amplio de talles. Para confirmar stock de un talle puntual, escribinos por Instagram." },
+  { q: "¿Dónde están ubicados?", a: "Estamos en Av. Luro 3162, Mar del Plata. Podés ver el mapa en la sección Ubicación de esta página." },
+  { q: "¿Cómo los contacto?", a: "Podés escribirnos por Instagram (@mariapaz.mdp) o completar el formulario de la sección Contáctame." },
+  { q: "¿Hacen cambios o devoluciones?", a: "Sí, consultanos por Instagram dentro de los primeros días de recibida tu compra para coordinar el cambio." }
+];
+
+const chatToggle = document.getElementById('chat-toggle');
+const chatPanel = document.getElementById('chat-panel');
+const chatClose = document.getElementById('chat-close');
+const chatBody = document.getElementById('chat-body');
+const chatSuggestions = document.getElementById('chat-suggestions');
+
+function addMsg(text, who){
+  const div = document.createElement('div');
+  div.className = 'msg ' + who;
+  div.textContent = text;
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function renderSuggestions(){
+  chatSuggestions.innerHTML = '';
+  FAQS.forEach(item=>{
+    const b = document.createElement('button');
+    b.textContent = item.q;
+    b.addEventListener('click', ()=>{
+      addMsg(item.q, 'user');
+      setTimeout(()=> addMsg(item.a, 'bot'), 300);
+    });
+    chatSuggestions.appendChild(b);
+  });
+}
+
+let opened = false;
+chatToggle.addEventListener('click', ()=>{
+  chatPanel.hidden = !chatPanel.hidden;
+  if(!chatPanel.hidden && !opened){
+    opened = true;
+    addMsg('¡Hola! 🌸 Soy el asistente virtual de María Paz Indumentaria. Elegí una pregunta o escribime la tuya.', 'bot');
+    renderSuggestions();
+  }
+});
+chatClose.addEventListener('click', ()=> chatPanel.hidden = true);
+</script>
