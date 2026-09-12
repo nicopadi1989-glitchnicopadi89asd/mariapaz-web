@@ -1,24 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>María Paz Indumentaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+/* Paleta pastel fija de la marca — no cambia con el modo oscuro del sistema */
 :root{
   --bg:#fffaf7; --card:#ffffff; --ink:#3a2e35; --ink-soft:#7a6b72;
   --pink:#f7c6d9; --pink-deep:#e895b3; --lilac:#d9c7f0; --mint:#c9ecdb;
   --peach:#ffe0c2; --line:#f0e2e8; --accent:#e895b3; --accent-ink:#5c2a3d;
   --shadow:0 8px 24px rgba(180,120,150,.12);
-}
-:root:not([data-theme="light"]){
-  @media (prefers-color-scheme: dark){
-    --bg:#231a20; --card:#2c2128; --ink:#f5e9ee; --ink-soft:#c9b8c2;
-    --pink:#5c3346; --pink-deep:#e895b3; --lilac:#3d3350; --mint:#243b32;
-    --peach:#4a3524; --line:#3a2c34; --accent:#f0a8c4; --accent-ink:#ffe3ee;
-    --shadow:0 8px 24px rgba(0,0,0,.35);
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#231a20; --card:#2c2128; --ink:#f5e9ee; --ink-soft:#c9b8c2;
-  --pink:#5c3346; --pink-deep:#e895b3; --lilac:#3d3350; --mint:#243b32;
-  --peach:#4a3524; --line:#3a2c34; --accent:#f0a8c4; --accent-ink:#ffe3ee;
-  --shadow:0 8px 24px rgba(0,0,0,.35);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -131,6 +125,8 @@ footer a{color:var(--accent-ink);text-decoration:none;font-weight:600}
   .navlinks{order:3;width:100%;justify-content:center}
 }
 </style>
+</head>
+<body>
 
 <nav>
   <div class="wrap">
@@ -321,3 +317,5 @@ chatToggle.addEventListener('click', ()=>{
 });
 chatClose.addEventListener('click', ()=> chatPanel.hidden = true);
 </script>
+</body>
+</html>
