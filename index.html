@@ -54,8 +54,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-
 .btn-primary{background:var(--accent);color:#3a1626;box-shadow:var(--shadow)}
 .btn-ghost{border:1.5px solid var(--pink-deep);color:var(--accent-ink);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .btn-ghost:hover{background:var(--pink)}
-.hero-art{aspect-ratio:1/1;border-radius:28px;background:linear-gradient(145deg,var(--pink),var(--peach) 60%,var(--mint));box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.4rem;color:#5c2a3d;text-align:center;padding:20px;animation:fadeUp .9s ease .1s both}
-.hero-art img{animation:floaty 5s ease-in-out infinite}
+.hero-art{display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeUp .9s ease .1s both}
+.hero-art img{animation:floaty 5s ease-in-out infinite;max-width:100%;height:auto}
 
 section{padding:64px 0}
 .eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:.75rem;color:var(--accent-ink);font-weight:700;margin-bottom:8px}
@@ -146,13 +146,13 @@ footer a{color:var(--accent-ink);text-decoration:none;font-weight:600}
     <div>
       <div class="eyebrow">Moda con actitud</div>
       <h1>Vestí tu esencia, cada temporada</h1>
-      <p class="lead">María Paz Indumentaria es diseño, color y calidad pensados para vos. Colecciones frescas con inspiración primaveral, para acompañarte en cada look del día a día.</p>
+      <p class="lead"><strong>Más que una prenda, un look.</strong><br><br>Seleccionamos tendencias, colores y prendas para que puedas crear un estilo que hable de vos.<br><br>Sentite. Vestite. Dejá tu huella.</p>
       <div class="actions">
         <a class="btn btn-primary" id="shopLinkHero" href="#" target="_blank" rel="noopener">Ver tienda online</a>
         <a class="btn btn-ghost" href="https://www.instagram.com/mariapaz.mdp" target="_blank" rel="noopener">Seguinos en Instagram</a>
       </div>
     </div>
-    <div class="hero-art"><img src="logo.png" alt="María Paz Showroom" style="max-width:78%;height:auto;filter:drop-shadow(0 6px 14px rgba(180,120,150,.18))"></div>
+    <div class="hero-art"><img src="logo.png" alt="María Paz Showroom" style="width:100%;max-width:420px;filter:drop-shadow(0 6px 14px rgba(180,120,150,.18))"></div>
   </div>
 </header>
 
@@ -160,24 +160,28 @@ footer a{color:var(--accent-ink);text-decoration:none;font-weight:600}
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Quiénes somos</div>
-      <h2>Una marca hecha con pasión por la moda</h2>
-      <p>Nacimos con la idea de acercar prendas cómodas, femeninas y de tendencia, cuidando cada detalle desde la selección de telas hasta la atención a cada clienta.</p>
+      <h2>María Paz nació de un sueño y fue creciendo junto a cada mujer que nos eligió.</h2>
+      <p>Somos una propuesta de indumentaria femenina que busca mucho más que ofrecer prendas: queremos ayudarte a crear looks que te representen, que te hagan sentir cómoda, segura y auténtica.</p>
+      <p>Creemos que la moda no tiene edad. Tiene actitud, personalidad y ese momento en el que volvés a elegirte.</p>
+      <p>Por eso seleccionamos cada prenda pensando en vos, en las tendencias, en la calidad y en todas las posibilidades que tiene un look cuando lo hacés propio.</p>
+      <p>Porque para nosotras, no se trata solamente de cómo te ves, sino de cómo te sentís cuando te vestís.</p>
+      <p><strong>María Paz — Más que una prenda, un look.</strong></p>
     </div>
     <div class="about-grid">
       <div class="card">
         <div class="ic ic-pink">🌸</div>
-        <h3>Diseño propio</h3>
-        <p>Colecciones pensadas por temporada, con paletas suaves y siluetas actuales.</p>
+        <h3>Selección de identidad</h3>
+        <p>Elegimos cada prenda pensando en las tendencias, la calidad y, sobre todo, en cómo ayudarte a crear un look que te represente.</p>
       </div>
       <div class="card">
         <div class="ic ic-mint">✨</div>
-        <h3>Calidad y detalle</h3>
-        <p>Seleccionamos telas y terminaciones para que cada prenda dure y se sienta bien.</p>
+        <h3>Nos diferenciamos</h3>
+        <p>No vendemos ropa, ayudamos a crear looks. Elegimos cada prenda pensando en cómo combinarla, cómo hacerla tuya y cómo ayudarte a encontrar ese estilo que te representa.</p>
       </div>
       <div class="card">
         <div class="ic ic-peach">💬</div>
         <h3>Atención cercana</h3>
-        <p>Te acompañamos en talles, cambios y consultas, antes y después de tu compra.</p>
+        <p>En María Paz nos gusta conocer a cada mujer que nos elige. Te escuchamos, te asesoramos y te acompañamos para que no solo encuentres una prenda, sino el look con el que te sientas vos.</p>
       </div>
     </div>
   </div>
@@ -196,12 +200,12 @@ footer a{color:var(--accent-ink);text-decoration:none;font-weight:600}
         <li><span class="ic">📱</span><div>WhatsApp<br><a href="#" id="waLink">Completar número</a></div></li>
         <li><span class="ic">✉️</span><div>Email<br><a href="#" id="emailLink">Completar email</a></div></li>
       </ul>
-      <form class="contactform" onsubmit="event.preventDefault(); alert('Gracias por escribirnos, te responderemos a la brevedad 💌');">
-        <input type="text" placeholder="Tu nombre" required>
-        <input type="email" placeholder="Tu email" required>
-        <textarea placeholder="Tu mensaje"></textarea>
-        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-        <p class="form-note">Este formulario es una demo visual — para recibir mensajes reales hay que conectarlo a un servicio de email o WhatsApp.</p>
+      <form class="contactform" id="contactForm">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu email" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" class="btn btn-primary" id="contactSubmit">Enviar mensaje</button>
+        <p id="contactStatus" style="font-size:.85rem;margin:0"></p>
       </form>
     </div>
   </div>
@@ -254,10 +258,44 @@ window.addEventListener('scroll', ()=>{
   navEl.classList.toggle('scrolled', window.scrollY > 8);
 }, {passive:true});
 
+/* ====== FORMULARIO DE CONTACTO -> /api/contact (Cloudflare Pages Function + Resend) ====== */
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+const contactSubmit = document.getElementById('contactSubmit');
+contactForm.addEventListener('submit', async (e)=>{
+  e.preventDefault();
+  const data = {
+    nombre: contactForm.nombre.value,
+    email: contactForm.email.value,
+    mensaje: contactForm.mensaje.value
+  };
+  contactSubmit.disabled = true;
+  contactSubmit.textContent = 'Enviando...';
+  contactStatus.style.color = 'var(--ink-soft)';
+  contactStatus.textContent = '';
+  try{
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(!res.ok) throw new Error('request failed');
+    contactStatus.style.color = '#3a8a5c';
+    contactStatus.textContent = 'Gracias por escribirnos, te responderemos a la brevedad 💌';
+    contactForm.reset();
+  }catch(err){
+    contactStatus.style.color = '#c0455a';
+    contactStatus.textContent = 'No se pudo enviar. Escribinos por WhatsApp o Instagram mientras lo solucionamos.';
+  }finally{
+    contactSubmit.disabled = false;
+    contactSubmit.textContent = 'Enviar mensaje';
+  }
+});
+
 /* ====== CONFIG EDITABLE ====== */
 const SHOP_URL = "#"; // reemplazar por el link real de la tienda Rubrik cuando esté listo
 const WHATSAPP_NUMBER = "5492236001990";
-const CONTACT_EMAIL = ""; // ej: "hola@mariapazindumentaria.com"
+const CONTACT_EMAIL = "mariapazshowroomm@gmail.com";
 
 [...document.querySelectorAll('#shopLinkTop,#shopLinkHero')].forEach(el=>{
   el.href = SHOP_URL === "#" ? "#" : SHOP_URL;
